@@ -17,20 +17,13 @@ modules:
   - name: extras
     buildsystem: simple
     build-commands:
-      - 'install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml'
-      - 'install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg'
-      - 'install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop'
+      - 'install -Dm644 extras/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml'
+      - 'install -Dm644 extras/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg'
+      - 'install -Dm644 extras/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop'
     sources:
-      - type: file
-        path: extras/ar.com.pilas_engine.App.metainfo.xml
-      - type: file
-        path: extras/ar.com.pilas_engine.App.svg
-      - type: file
-        path: extras/ar.com.pilas_engine.App.desktop
-      # FIXME upstream extra files and obtain them from the release archive:
-      # - type: archive
-      #   url: https://github.com/pilas-engine/pilas-engine/archive/refs/tags/v2.7.3.zip
-      #   sha256: e1acc76cbcc3e3a8a222f0efb0feeef5fd882afe93a046c202333f4c25f196fb
+      - type: archive
+        url: https://github.com/pilas-engine/pilas-engine/archive/refs/tags/v2.7.4.zip
+        sha256: 49c0d6465d35ce80214ee44f4bd2942f8f0550fc6f7e3c54ebe380c6cefaf85b
   - name: wrapper
     buildsystem: simple
     build-commands:
@@ -44,10 +37,16 @@ modules:
     buildsystem: simple
     build-commands:
       - 'mkdir --parents /app/pilas-engine'
-      - 'mv --target-directory=/app/pilas-engine pilas-engine-linux-x64/*'
+      - 'if [ -d pilas-engine-linux-x64 ]; then mv --target-directory=/app/pilas-engine pilas-engine-linux-x64/*; fi'
+      - 'if [ -d pilas-engine-linux-arm64 ]; then mv --target-directory=/app/pilas-engine pilas-engine-linux-arm64/*; fi'
     sources:
       - type: archive
-        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.7.3/pilas-engine-linux-64_bits.zip
-        sha256: e1ae6b4c12cb861e53bc5ecb3cb1411dcea7a5927cdfec2be24fc7c8783f95d6
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.7.4/pilas-engine-linux-64_bits.zip
+        sha256: 38891441eed9b714df591cb0a833644d6e85a902113db2d0b24168f23d2f57f3
         only-arches:
           - x86_64
+      - type: archive
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.7.4/pilas-engine-linux-arm64.zip
+        sha256: ba9b5381c30c244c1b6fa804901a4e93509c133d7608e9f58ed78d73ae86d09a
+        only-arches:
+          - aarch64
