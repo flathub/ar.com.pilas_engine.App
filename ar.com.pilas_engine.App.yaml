@@ -22,8 +22,8 @@ modules:
       - install -Dm644 extras/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: archive
-        url: https://api.github.com/repos/pilas-engine/pilas-engine/tarball/v2.8.15
-        sha256: 0161141332b6b1f282cb3e3c25ce23f0ecc089b5b8e5a47fe5753e89c89787d6
+        url: https://api.github.com/repos/pilas-engine/pilas-engine/tarball/v2.8.17
+        sha256: 58cfa24c515e455857cdd59051e96c21809d90bf7aaea24d2213a24470c39444
         archive-type: tar-gzip
         x-checker-data:
           type: json
@@ -53,8 +53,8 @@ modules:
         pilas-engine-linux-arm64/*; fi
     sources:
       - type: archive
-        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.15/pilas-engine-linux-64_bits.zip
-        sha256: 0143c396cbb61e8b36ac21379163eba83c008b0f3130f988a8fe38d11e857f56
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.17/pilas-engine-linux-64_bits.zip
+        sha256: f6a67cef995b6b10e8e414394943d92c92ef0479c157c401254a9810a9b702f0
         only-arches:
           - x86_64
         x-checker-data:
@@ -67,8 +67,8 @@ modules:
           versions:
             <: 3.0.0
       - type: archive
-        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.15/pilas-engine-linux-arm64.zip
-        sha256: 154f24fbfdedb36d5507471b44478044ef0b62056f8b9d1faf4da4e05b582591
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.17/pilas-engine-linux-arm64.zip
+        sha256: c06d9722c183b762ee3d0f633e5e903144f205f6c3f0982685d8f7121c91ccec
         only-arches:
           - aarch64
         x-checker-data:
