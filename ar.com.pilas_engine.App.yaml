@@ -22,8 +22,8 @@ modules:
       - install -Dm644 extras/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: archive
-        url: https://api.github.com/repos/pilas-engine/pilas-engine/tarball/v2.8.19
-        sha256: 2df0b2f71acafe6df196594f16b8a416a0de25e0fbfeaee51a7b31c80adc74d8
+        url: https://api.github.com/repos/pilas-engine/pilas-engine/tarball/v2.8.21
+        sha256: 52a1071dab93c779a103cdc951fbf90aeb6decd19043a2c7b80cf2ddaeb47458
         archive-type: tar-gzip
         x-checker-data:
           type: json
