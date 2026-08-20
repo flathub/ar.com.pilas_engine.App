@@ -53,8 +53,8 @@ modules:
         pilas-engine-linux-arm64/*; fi
     sources:
       - type: archive
-        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.19/pilas-engine-linux-64_bits.zip
-        sha256: 870eb3a713f7639de49b40d28e2ba44a69fe61b9c40689520fddf89358c85fe2
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.21/pilas-engine-linux-64_bits.zip
+        sha256: dee65ac05ac6b48c90a2f60d54ca2c33abef46cfad216f8be50bc981a22b2b69
         only-arches:
           - x86_64
         x-checker-data:
@@ -67,8 +67,8 @@ modules:
           versions:
             <: 3.0.0
       - type: archive
-        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.19/pilas-engine-linux-arm64.zip
-        sha256: 31f2130befe175e42c5d65e511cf910b74f225a8708009bd89f335defe7a7f26
+        url: https://github.com/pilas-engine/pilas-engine/releases/download/v2.8.21/pilas-engine-linux-arm64.zip
+        sha256: fa2fc3945ab50036d74103a435eac2b2946c44494dcb266255df1049142c52e2
         only-arches:
           - aarch64
         x-checker-data:
